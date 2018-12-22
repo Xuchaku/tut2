@@ -153,7 +153,7 @@ void List::set(int index, int val) {
 
 	}
 	else {
-		throw out_of_range("Index incorrect\n");
+		throw out_of_range("Index incorrect");
 	}
 }
 int List::find_last(List *twoList) {

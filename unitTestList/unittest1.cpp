@@ -81,8 +81,8 @@ namespace UnitTest_2
 			try {
 				lst->pop_back();
 			}
-			catch (out_of_range) {
-
+			catch (out_of_range e) {
+				Assert::AreEqual(e.what(), "No elements");
 			}
 			lst->clear();
 
@@ -119,8 +119,8 @@ namespace UnitTest_2
 			try {
 				lst->pop_front();
 			}
-			catch (out_of_range) {
-
+			catch (out_of_range e) {
+				Assert::AreEqual(e.what(), "No elements");
 			}
 			lst->clear();
 
@@ -231,8 +231,8 @@ namespace UnitTest_2
 				lst->delete_elem(1000);
 				lst->delete_elem(875);
 			}
-			catch (out_of_range) {
-
+			catch (out_of_range e) {
+				Assert::AreEqual(e.what(), "Incorrect index");
 			}
 			//Assert::AreEqual(lst->at(1), 8);
 			lst->clear();
@@ -250,8 +250,8 @@ namespace UnitTest_2
 				lst->delete_elem(-3);
 				lst->delete_elem(111);
 			}
-			catch (out_of_range) {
-
+			catch (out_of_range e) {
+				Assert::AreEqual(e.what(), "Incorrect index");
 			}
 			//Assert::AreEqual(lst->at(1), 8);
 			lst->clear();
@@ -316,8 +316,8 @@ namespace UnitTest_2
 			try {
 				lst->set(11, 9);
 			}
-			catch (out_of_range) {
-
+			catch (out_of_range e) {
+				Assert::AreEqual(e.what(), "Index incorrect");
 			}
 			lst->clear();
 
@@ -336,8 +336,8 @@ namespace UnitTest_2
 			try {
 				lst->set(-2, 9);
 			}
-			catch (out_of_range) {
-
+			catch (out_of_range e) {
+				Assert::AreEqual(e.what(), "Index incorrect");
 			}
 			lst->clear();
 
